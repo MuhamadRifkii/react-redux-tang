@@ -14,10 +14,6 @@ export function getPokemonListResult() {
           type: actionTypes.LIST_SUCCESS,
           payload: response?.data,
         })
-
-        // localStorage.setItem("data", JSON.stringify(response.data))
-        // sessionStorage.setItem("datas", JSON.stringify(response.data))
-        
         return response.data
       })
       .catch((err) => {
