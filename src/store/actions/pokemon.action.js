@@ -3,12 +3,12 @@ import { actionTypes } from '../actionTypes'
 
 const baseUrl = `https://pokeapi.co/api/v2`
 
-export function getPokemonListResult() {
+export function getPokemonListResult(params) {
 
   return (dispatch) => {
-    dispatch({ type: actionTypes.LIST_REQUEST })
+    dispatch({ type: actionTypes.LIST_REQUEST, payload: params})
     return axios
-      .get(`${baseUrl}/pokemon`)
+      .get(`${baseUrl}/pokemon`, { params })
       .then((response) => {
         dispatch({
           type: actionTypes.LIST_SUCCESS,

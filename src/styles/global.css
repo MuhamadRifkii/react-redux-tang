@@ -1,14 +1,40 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
 .pokemon-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
     gap: 16px;
+    padding: 20px;
+
 }
 
 .pokemon-card {
+    text-transform: capitalize;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 16px;
     text-align: center;
     width: 120px;
     background-color: #f9f9f9;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
+}
+
+.pokemon-card h2 {
+    font-size: 1.2rem;
+    color: #333;
 }
