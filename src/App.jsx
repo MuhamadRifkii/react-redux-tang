@@ -18,10 +18,11 @@ function App() {
 
   const searchPokemon = (e) => {
     setFilter(e.target.value)
+    document.title = e.target.value || "Pokémon List"
   }
 
   const filteredPokemon = data.filter((pokemon) =>
-    pokemon.name.includes(filter),
+    pokemon.name.toLowerCase().includes(filter.toLowerCase()),
   )
 
   return (
